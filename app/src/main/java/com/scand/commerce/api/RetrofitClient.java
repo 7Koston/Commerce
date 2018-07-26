@@ -18,9 +18,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 import static android.content.Context.CONNECTIVITY_SERVICE;
 
-public class RetrofitModule {
+public class RetrofitClient {
 
-    private static IRetrofitModule iRetrofitModule;
+    private static APIModel APIModel;
 
     private static ConnectivityManager connectivityManager;
 
@@ -39,7 +39,7 @@ public class RetrofitModule {
 
         rBuilder.client(okHttpClient);
 
-        iRetrofitModule = rBuilder.build().create(IRetrofitModule.class);
+        APIModel = rBuilder.build().create(APIModel.class);
     }
 
     private static void buildHttpClient() {
@@ -64,6 +64,8 @@ public class RetrofitModule {
                                 return chain.proceed(request);
                             } else {
                                 return chain.proceed(request.newBuilder()
+                                        .header("x-apikey",
+                                                "2c5a02e9ca0a055021d8b861899d122da637e")
                                         .header("Cache-Control",
                                                 "public, only-if-cached, max-stale=604800")
                                         .build()
@@ -81,7 +83,7 @@ public class RetrofitModule {
         return netInfo != null && netInfo.isConnected();
     }
 
-    public static IRetrofitModule get() {
-        return iRetrofitModule;
+    public static APIModel get() {
+        return APIModel;
     }
 }

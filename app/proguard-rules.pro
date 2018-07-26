@@ -2,11 +2,10 @@
 -dontwarn okio.**
 -dontwarn javax.annotation.**
 -dontwarn org.conscrypt.**
+-dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
 
 -keep class android.support.v7.** { *; }
 -keep interface android.support.v7.** { *; }
--keep class com.splunk.** { *; }
--keep class org.jboss.aerogear.android.authorization.** { *; }
 
 -keepnames class okhttp3.internal.publicsuffix.PublicSuffixDatabase
 
@@ -56,7 +55,13 @@
     @android.webkit.JavascriptInterface <methods>;
 }
 
+-keepclassmembers,allowshrinking,allowobfuscation interface * {
+    @retrofit2.http.* <methods>;
+}
+
 -keeppackagenames org.jsoup.nodes
+
+-keepattributes Signature
 
 -dontobfuscate
 -optimizations !code/allocation/variable

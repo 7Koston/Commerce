@@ -2,7 +2,7 @@ package com.scand.commerce;
 
 import android.support.multidex.MultiDexApplication;
 
-import com.scand.commerce.api.RetrofitModule;
+import com.scand.commerce.api.RetrofitClient;
 import com.squareup.picasso.Picasso;
 
 public class App extends MultiDexApplication {
@@ -16,7 +16,7 @@ public class App extends MultiDexApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-        RetrofitModule.initialize(getApplicationContext());
+        RetrofitClient.initialize(getApplicationContext());
         Picasso.get().setLoggingEnabled(true);
         singletonApp = this;
     }

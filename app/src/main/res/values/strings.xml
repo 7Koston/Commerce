@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Commerce</string>
+
+
+    <string name="main_projects">Projects</string>
+    <string name="main_orders">Orders</string>
 </resources>

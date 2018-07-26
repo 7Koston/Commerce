@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ru.ruranobe.ruranobeapp.widgets.NonScrollableViewPager
+        android:id="@+id/nsvpMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bnvMain"
+        android:background="@color/colorBackgroundWhite"
+        android:clickable="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/toolbar_shadow"
+        android:visibility="visible" />
+
+    <com.scand.commerce.widgets.BottomNavigationViewEx
+        android:id="@+id/bnvMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorWhiteE"
+        app:itemIconTint="@color/bottom_nav_bar_selector"
+        app:itemTextColor="@color/bottom_nav_bar_selector"
+        app:menu="@menu/main_bottom" />
+
+</RelativeLayout>

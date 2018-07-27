@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <ru.ruranobe.ruranobeapp.widgets.NonScrollableViewPager
+    <com.scand.commerce.widgets.NonScrollableViewPager
         android:id="@+id/nsvpMain"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

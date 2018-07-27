@@ -61,7 +61,7 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxjava:${rxJava2}"
 
     implementation "com.squareup.retrofit2:retrofit:${retrofit}"
-    implementation "com.squareup.retrofit2:adapter-rxjava:${retrofit}"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:${retrofit}"
     implementation "com.squareup.retrofit2:converter-gson:${retrofit}"
 
     implementation "com.squareup.okhttp3:logging-interceptor:${okHttp3}"

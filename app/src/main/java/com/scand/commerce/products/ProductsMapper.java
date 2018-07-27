@@ -9,12 +9,11 @@ import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
-public class ProductsMapper {
+class ProductsMapper {
 
-    public Single<ArrayList<ItemModel>> items() {
+    Single<ArrayList<ItemModel>> items() {
         return RetrofitClient.get()
                 .getItems()
-                .firstOrError()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }

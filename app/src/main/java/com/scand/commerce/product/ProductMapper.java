@@ -13,7 +13,6 @@ public class ProductMapper {
     public Single<ItemModel> item(Object itemId) {
         return RetrofitClient.get()
                 .getItem(itemId)
-                .firstOrError()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }

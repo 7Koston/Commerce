@@ -5,7 +5,7 @@ import com.scand.commerce.products.item.ItemModel;
 
 import java.util.ArrayList;
 
-import io.reactivex.Observable;
+import io.reactivex.Single;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
@@ -14,13 +14,13 @@ import retrofit2.http.Path;
 public interface APIModel {
 
     @GET("item")
-    Observable<ArrayList<ItemModel>> getItems();
+    Single<ArrayList<ItemModel>> getItems();
 
     @GET("/item/{objectid}")
-    Observable<ItemModel> getItem(@Path("objectid") Object objectId);
+    Single<ItemModel> getItem(@Path("objectid") Object objectId);
 
     @GET("order")
-    Observable<ArrayList<OrderModel>> getOrders();
+    Single<ArrayList<OrderModel>> getOrders();
 
     @POST("order")
     String addOrder(@Body OrderModel orderModel);

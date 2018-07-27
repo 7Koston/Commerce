@@ -13,7 +13,7 @@ import okhttp3.Protocol;
 import okhttp3.Request;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 import static android.content.Context.CONNECTIVITY_SERVICE;
@@ -35,7 +35,7 @@ public class RetrofitClient {
         Retrofit.Builder rBuilder = new Retrofit.Builder().
                 baseUrl("https://commerce-7c5d.restdb.io/rest/")
                 .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create());
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create());
 
         rBuilder.client(okHttpClient);
 

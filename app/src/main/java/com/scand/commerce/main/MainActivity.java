@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         if (savedInstanceState != null) {
             fragmentId = savedInstanceState.getInt("fragmentId");
         } else {
-            fragmentId = getIntent().getIntExtra("fragmentId", 2);
+            fragmentId = getIntent().getIntExtra("fragmentId", 0);
         }
 
         v = findViewById(R.id.nsvpMain);

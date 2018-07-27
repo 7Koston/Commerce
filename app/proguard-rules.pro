@@ -18,6 +18,8 @@
 -keep public class * extends android.preference.Preference
 -keep public class com.android.vending.licensing.ILicensingService
 
+-keep interface com.scand.commerce.api.APIModel
+
 
 -keepclassmembers class * implements android.os.Parcelable {
     static ** CREATOR;

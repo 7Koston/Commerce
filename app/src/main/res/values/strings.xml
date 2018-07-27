@@ -2,6 +2,9 @@
     <string name="app_name">Commerce</string>
 
 
-    <string name="main_projects">Projects</string>
+    <string name="main_projects">Products</string>
     <string name="main_orders">Orders</string>
+    <string name="product_buy">BUY</string>
+    <string name="product_description">DESCRIPTION</string>
+    <string name="product_price">Price: %1$d $</string>
 </resources>

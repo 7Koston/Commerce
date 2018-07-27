@@ -1,4 +1,4 @@
-package com.scand.commerce.products.item;
+package com.scand.commerce.product;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -8,51 +8,42 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class ItemModel implements Parcelable {
+public class ProductModel implements Parcelable {
 
-    public final static Parcelable.Creator<ItemModel> CREATOR = new Creator<ItemModel>() {
-
-        public ItemModel createFromParcel(Parcel in) {
-            return new ItemModel(in);
+    public final static Parcelable.Creator<ProductModel> CREATOR = new Creator<ProductModel>() {
+        public ProductModel createFromParcel(Parcel in) {
+            return new ProductModel(in);
         }
 
-        public ItemModel[] newArray(int size) {
-            return (new ItemModel[size]);
+        public ProductModel[] newArray(int size) {
+            return (new ProductModel[size]);
         }
 
     };
-    @SerializedName("_id")
-    @Expose
-    private Object id;
     @SerializedName("title")
     @Expose
     private String title;
     @SerializedName("price")
     @Expose
     private int price;
+    @SerializedName("description")
+    @Expose
+    private String description;
     @SerializedName("image")
     @Expose
     private List<String> image = null;
 
-    private ItemModel(Parcel in) {
-        this.id = in.readValue((Object.class.getClassLoader()));
-        this.title = in.readString();
+    private ProductModel(Parcel in) {
         this.price = in.readInt();
+        this.title = in.readString();
+        this.description = in.readString();
         in.readList(this.image, (java.lang.String.class.getClassLoader()));
     }
 
-    public ItemModel(Object id, String title, int price) {
-        this.id = id;
+    public ProductModel(String description, String title, int price) {
+        this.description = description;
         this.title = title;
         this.price = price;
-    }
-
-    public Object getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getTitle() {
@@ -63,7 +54,7 @@ public class ItemModel implements Parcelable {
         this.title = title;
     }
 
-    public int getPrice() {
+    int getPrice() {
         return price;
     }
 
@@ -71,10 +62,16 @@ public class ItemModel implements Parcelable {
         this.price = price;
     }
 
-    public String getImage() {
-        if (image != null && !image.isEmpty())
-            return image.get(0);
-        else return "";
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public List<String> getImage() {
+        return image;
     }
 
     public void setImage(List<String> image) {
@@ -82,13 +79,14 @@ public class ItemModel implements Parcelable {
     }
 
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeValue(id);
-        dest.writeString(title);
         dest.writeInt(price);
+        dest.writeString(title);
+        dest.writeString(description);
         dest.writeList(image);
     }
 
     public int describeContents() {
         return 0;
     }
+
 }

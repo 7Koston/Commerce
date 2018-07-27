@@ -103,11 +103,6 @@ public class ProductsFragment extends Fragment implements SwipeRefreshLayout.OnR
     }
 
     @Override
-    public void onForceRefresh() {
-        onRefresh();
-    }
-
-    @Override
     public void onErrorMessage(String error) {
         Snackbar.make(v, error, Snackbar.LENGTH_LONG).show();
         pbProducts.setVisibility(View.GONE);

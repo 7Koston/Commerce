@@ -7,13 +7,17 @@ def okHttp3 = "3.11.0"
 def retrofit = "2.4.0"
 
 android {
+
     compileSdkVersion 27
+    buildToolsVersion "27.0.3"
+
     defaultConfig {
         applicationId "com.scand.commerce"
         minSdkVersion 17
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     lintOptions {

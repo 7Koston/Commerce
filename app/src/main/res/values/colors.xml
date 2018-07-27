@@ -10,6 +10,7 @@
     <color name="colorWhiteE">#fefefe</color>
 
     <color name="colorBackgroundWhite">#fbfbfb</color>
+    <color name="colorBlackWithTransparent1">#aa000000</color>
 
     <color name="colorTextH1">#000000</color>
     <color name="colorTextH2">#303030</color>

@@ -7,11 +7,9 @@ import java.util.ArrayList;
 
 public interface ProductsView {
 
-    void onProductsLoaded(ArrayList<ItemModel> volumeFileModels);
+    void onProductsLoaded(ArrayList<ItemModel> itemModels);
 
     void onItemClicked(ItemModel model, int position);
-
-    void onForceRefresh();
 
     void onErrorMessage(String error);
 }

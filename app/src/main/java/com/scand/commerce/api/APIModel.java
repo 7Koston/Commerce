@@ -1,6 +1,7 @@
 package com.scand.commerce.api;
 
 import com.scand.commerce.orders.item.OrderModel;
+import com.scand.commerce.product.ProductModel;
 import com.scand.commerce.products.item.ItemModel;
 
 import java.util.ArrayList;
@@ -16,8 +17,8 @@ public interface APIModel {
     @GET("item")
     Single<ArrayList<ItemModel>> getItems();
 
-    @GET("/item/{objectid}")
-    Single<ItemModel> getItem(@Path("objectid") Object objectId);
+    @GET("item/{objectid}")
+    Single<ProductModel> getItem(@Path("objectid") Object objectId);
 
     @GET("order")
     Single<ArrayList<OrderModel>> getOrders();

@@ -48,7 +48,7 @@ public class MainPagerAdapter extends FragmentPagerAdapter {
     public Parcelable saveState() {
         Bundle bundle = (Bundle) super.saveState();
         if (bundle != null)
-            bundle.putParcelableArray("states", null); // Never maintain any states from the base class, just null it out
+            bundle.putParcelableArray("states", null);
         return bundle;
     }
 

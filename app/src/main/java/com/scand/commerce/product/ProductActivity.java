@@ -96,14 +96,13 @@ public class ProductActivity extends AppCompatActivity implements ProductView, B
     @Override
     public void onClick(View v) {
         if (llProductBuy == v) {
-            OrderDialogFragment fragment = OrderDialogFragment
+            OrderDialogFragment dialogFragment = OrderDialogFragment
                     .newInstance(productPresenter.getObjectId());
-            fragment.setOrderDialogStateListener(this);
-            fragment.show(getSupportFragmentManager(), fragment.getTag());
+            dialogFragment.show(getSupportFragmentManager(), dialogFragment.getTag());
         }
     }
 
-    @Override
+
     public void onFinishDialog(String msg) {
         onErrorMessage(msg);
     }

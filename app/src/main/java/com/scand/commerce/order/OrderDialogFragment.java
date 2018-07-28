@@ -15,11 +15,11 @@ import android.widget.Button;
 
 import com.scand.commerce.R;
 import com.scand.commerce.orders.item.OrderModel;
+import com.scand.commerce.product.ProductActivity;
 
 public class OrderDialogFragment extends DialogFragment implements Button.OnClickListener, OrderDialogView {
 
     private OrderDialogPresenter mPresenter;
-    private OrderDialogStateListener mListener;
 
     private View v;
 
@@ -88,7 +88,9 @@ public class OrderDialogFragment extends DialogFragment implements Button.OnClic
 
     @Override
     public void onPostFinished(String response) {
-        mListener.onFinishDialog(response);
+        ProductActivity parent = (ProductActivity) getActivity();
+        if (parent != null)
+            parent.onFinishDialog(response);
         dismiss();
     }
 
@@ -106,10 +108,6 @@ public class OrderDialogFragment extends DialogFragment implements Button.OnClic
     @Override
     public void onErrorMessage(String error) {
         Snackbar.make(v, error, Snackbar.LENGTH_LONG).show();
-    }
-
-    public void setOrderDialogStateListener(OrderDialogStateListener listener) {
-        this.mListener = listener;
     }
 
     public interface OrderDialogStateListener {

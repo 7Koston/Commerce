@@ -39,7 +39,7 @@ public class ProductsFragment extends Fragment implements SwipeRefreshLayout.OnR
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        setHasOptionsMenu(true);
+        setHasOptionsMenu(false);
         v = inflater.inflate(R.layout.fragment_products, container, false);
 
         Context mContext = v.getContext();

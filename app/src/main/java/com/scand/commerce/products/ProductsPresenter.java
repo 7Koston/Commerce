@@ -79,11 +79,11 @@ public class ProductsPresenter extends LifecycleCallbacks implements ItemAdapter
         return size;
     }
 
-    public void onBindVolumeFileViewAtPosition(int position, ItemCallBack volumeFileCallBack) {
+    public void onBindVolumeFileViewAtPosition(int position, ItemCallBack callBack) {
         ItemModel item = itemModels.get(position);
-        volumeFileCallBack.setTitle(item.getTitle());
-        volumeFileCallBack.setPrice(item.getPrice());
-        volumeFileCallBack.setImageUrl(item.getImage());
+        callBack.setTitle(item.getTitle());
+        callBack.setPrice(item.getPrice());
+        callBack.setImageUrl(item.getImage());
     }
 
     public int getVolumeFilesCount() {

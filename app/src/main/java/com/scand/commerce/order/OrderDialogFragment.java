@@ -94,8 +94,13 @@ public class OrderDialogFragment extends DialogFragment implements Button.OnClic
 
     @Override
     public OrderModel onOrderModelRequested(String objectId) {
-        return new OrderModel(tietOrderYourName.getText().toString(),
-                tietOrderYourPhone.getText().toString(), objectId);
+        String name, phone, id;
+        name = tietOrderYourName.getText().toString();
+        phone = tietOrderYourPhone.getText().toString();
+        id = objectId;
+        if (!name.isEmpty() && !phone.isEmpty() && !id.isEmpty())
+            return new OrderModel(name, phone, id);
+        else return null;
     }
 
     @Override

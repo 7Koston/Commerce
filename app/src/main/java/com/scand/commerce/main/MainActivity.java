@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         v = findViewById(R.id.nsvpMain);
         bnvMain = findViewById(R.id.bnvMain);
         bnvMain.getMenu().getItem(fragmentId).setChecked(true);
+        bnvMain.setOnNavigationItemSelectedListener(this);
         setupViewPager();
     }
 

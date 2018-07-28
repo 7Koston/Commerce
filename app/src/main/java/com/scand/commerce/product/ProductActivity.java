@@ -49,6 +49,7 @@ public class ProductActivity extends AppCompatActivity implements ProductView, B
 
         productPresenter = new ProductPresenter(this,
                 getIntent().getStringExtra("objectId"));
+        isFromOrders(getIntent().getBooleanExtra("fromOrders", false));
         productPresenter.onCreate(savedInstanceState);
     }
 
@@ -105,5 +106,10 @@ public class ProductActivity extends AppCompatActivity implements ProductView, B
     @Override
     public void onFinishDialog(String msg) {
         onErrorMessage(msg);
+    }
+
+    private void isFromOrders(boolean flag) {
+        if (flag)
+            llProductBuy.setVisibility(View.GONE);
     }
 }

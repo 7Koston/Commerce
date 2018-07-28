@@ -43,7 +43,7 @@
                 android:maxLines="2"
                 android:minLines="2"
                 android:paddingTop="5dp"
-                android:textColor="#333333"
+                android:textColor="@color/colorTextH2"
                 android:textSize="18sp" />
 
             <TextView
@@ -57,7 +57,8 @@
                 android:layout_marginBottom="5dp"
                 android:ellipsize="end"
                 android:maxLines="1"
-                android:textColor="#898989" />
+                android:textColor="@color/colorTextH3"
+                android:textSize="16sp" />
 
         </RelativeLayout>
 

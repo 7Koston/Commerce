@@ -56,8 +56,7 @@ public class RetrofitClient {
                                 request = request.newBuilder()
                                         .header("x-apikey",
                                                 "2c5a02e9ca0a055021d8b861899d122da637e")
-                                        .header("Cache-Control",
-                                                "public, max-age=86400")
+                                        .header("cache-control", "no-cache")
                                         .header("User-Agent",
                                                 Constants.USER_AGENT)
                                         .build();

@@ -50,8 +50,15 @@ public class OrderDialogFragment extends DialogFragment implements Button.OnClic
             mPresenter = new OrderDialogPresenter(this, args.getString("objectId"));
         else
             mPresenter = new OrderDialogPresenter(this, "");
+        mPresenter.onCreate(savedInstanceState);
 
         return dialog;
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        mPresenter.onSaveInstanceState(outState);
     }
 
     @Override

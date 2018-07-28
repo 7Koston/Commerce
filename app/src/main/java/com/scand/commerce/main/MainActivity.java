@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             super.onBackPressed();
         } else {
             doubleBackToExitPressedOnce = true;
-            Snackbar.make(v, "Нажмите дважды для выхода", Snackbar.LENGTH_SHORT)
+            Snackbar.make(v, "Press twice for exit", Snackbar.LENGTH_SHORT)
                     .setAction("Action", null).show();
 
             new Handler().postDelayed(() -> doubleBackToExitPressedOnce = false, 2000);

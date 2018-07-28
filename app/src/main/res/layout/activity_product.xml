@@ -6,10 +6,11 @@
     android:background="@color/colorBackgroundWhite">
 
     <android.support.v4.widget.NestedScrollView
-        android:id="@+id/vpVolumeInfo"
+        android:id="@+id/nsvProduct"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:visibility="invisible"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
@@ -110,5 +111,14 @@
         android:background="@drawable/toolbar_shadow"
         android:visibility="visible"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <com.scand.commerce.widgets.TintedProgressBar
+        android:id="@+id/pbProduct"
+        style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="visible"
+        app:tint_color="@color/colorPrimary" />
 
 </FrameLayout>

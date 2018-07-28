@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -11,8 +12,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.scand.commerce.Animations;
 import com.scand.commerce.R;
 import com.scand.commerce.order.OrderDialogFragment;
+import com.scand.commerce.widgets.TintedProgressBar;
 import com.squareup.picasso.Picasso;
 
 public class ProductActivity extends AppCompatActivity implements ProductView, Button.OnClickListener, OrderDialogFragment.OrderDialogStateListener {
@@ -25,6 +28,8 @@ public class ProductActivity extends AppCompatActivity implements ProductView, B
     private ImageView ivProductImage;
     private LinearLayout llProductBuy;
     private TextView tvPrdTitle, tvPrdPrice, tvPrdDescription;
+    private NestedScrollView nsvProduct;
+    private TintedProgressBar pbProduct;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -39,6 +44,8 @@ public class ProductActivity extends AppCompatActivity implements ProductView, B
         tvPrdTitle = findViewById(R.id.tvPrdTitle);
         tvPrdPrice = findViewById(R.id.tvPrdPrice);
         tvPrdDescription = findViewById(R.id.tvPrdDescription);
+        nsvProduct = findViewById(R.id.nsvProduct);
+        pbProduct = findViewById(R.id.pbProduct);
 
         productPresenter = new ProductPresenter(this,
                 getIntent().getStringExtra("objectId"));
@@ -76,7 +83,8 @@ public class ProductActivity extends AppCompatActivity implements ProductView, B
         tvPrdTitle.setText(productModel.getTitle());
         tvPrdPrice.setText(getString(R.string.product_price, productModel.getPrice()));
         tvPrdDescription.setText(productModel.getDescription());
-
+        Animations.hideElementFade(pbProduct, 400);
+        Animations.showElementFade(nsvProduct, 500);
     }
 
     @Override

@@ -13,9 +13,9 @@ class ProductPresenter extends LifecycleCallbacks {
     private final ProductView productView;
     private final ProductMapper productMapper;
     private ProductModel productModel;
-    private Object id;
+    private String id;
 
-    ProductPresenter(ProductView productView, Object id) {
+    ProductPresenter(ProductView productView, String id) {
         this.productView = productView;
         productMapper = new ProductMapper();
         this.id = id;
@@ -26,7 +26,8 @@ class ProductPresenter extends LifecycleCallbacks {
                 .subscribeWith(new DisposableSingleObserver<ProductModel>() {
 
                     @Override
-                    public void onSuccess(ProductModel productModel) {
+                    public void onSuccess(ProductModel model) {
+                        productModel = model;
                         productView.onProductLoaded(productModel);
                     }
 
@@ -54,5 +55,9 @@ class ProductPresenter extends LifecycleCallbacks {
         if (productModel != null) {
             outState.putParcelable(BUNDLE_SECTIONS, productModel);
         }
+    }
+
+    String getObjectId() {
+        return id;
     }
 }

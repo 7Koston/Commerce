@@ -24,5 +24,5 @@ public interface APIModel {
     Single<ArrayList<OrderModel>> getOrders();
 
     @POST("order")
-    String addOrder(@Body OrderModel orderModel);
+    Single<Object> addOrder(@Body OrderModel orderModel);
 }

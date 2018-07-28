@@ -70,8 +70,10 @@ public class ProductModel implements Parcelable {
         this.description = description;
     }
 
-    public List<String> getImage() {
-        return image;
+    public String getImage() {
+        if (image != null && !image.isEmpty())
+            return image.get(0);
+        else return "";
     }
 
     public void setImage(List<String> image) {

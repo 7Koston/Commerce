@@ -23,7 +23,7 @@ public class ItemModel implements Parcelable {
     };
     @SerializedName("_id")
     @Expose
-    private Object id;
+    private String id;
     @SerializedName("title")
     @Expose
     private String title;
@@ -35,19 +35,19 @@ public class ItemModel implements Parcelable {
     private List<String> image = null;
 
     private ItemModel(Parcel in) {
-        this.id = in.readValue((Object.class.getClassLoader()));
+        this.id = in.readString();
         this.title = in.readString();
         this.price = in.readInt();
         in.readList(this.image, (java.lang.String.class.getClassLoader()));
     }
 
-    public ItemModel(Object id, String title, int price) {
+    public ItemModel(String id, String title, int price) {
         this.id = id;
         this.title = title;
         this.price = price;
     }
 
-    public Object getId() {
+    public String getId() {
         return id;
     }
 
@@ -82,7 +82,7 @@ public class ItemModel implements Parcelable {
     }
 
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeValue(id);
+        dest.writeString(id);
         dest.writeString(title);
         dest.writeInt(price);
         dest.writeList(image);

@@ -12,9 +12,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.scand.commerce.R;
+import com.scand.commerce.order.OrderDialogFragment;
 import com.squareup.picasso.Picasso;
 
-public class ProductActivity extends AppCompatActivity implements ProductView, Button.OnClickListener {
+public class ProductActivity extends AppCompatActivity implements ProductView, Button.OnClickListener, OrderDialogFragment.OrderDialogStateListener {
 
     public static boolean isActive = false;
 
@@ -71,7 +72,6 @@ public class ProductActivity extends AppCompatActivity implements ProductView, B
                 .load("https://commerce-7c5d.restdb.io/media/" + productModel.getImage())
                 .fit()
                 .centerInside()
-                .noFade()
                 .into(ivProductImage);
         tvPrdTitle.setText(productModel.getTitle());
         tvPrdPrice.setText(getString(R.string.product_price, productModel.getPrice()));
@@ -87,7 +87,15 @@ public class ProductActivity extends AppCompatActivity implements ProductView, B
     @Override
     public void onClick(View v) {
         if (llProductBuy == v) {
-            Snackbar.make(v, "BUY", Snackbar.LENGTH_LONG).show();
+            OrderDialogFragment fragment = OrderDialogFragment
+                    .newInstance(productPresenter.getObjectId());
+            fragment.setOrderDialogStateListener(this);
+            fragment.show(getSupportFragmentManager(), fragment.getTag());
         }
+    }
+
+    @Override
+    public void onFinishDialog(String msg) {
+        onErrorMessage(msg);
     }
 }

@@ -96,7 +96,7 @@ public class ProductsFragment extends Fragment implements SwipeRefreshLayout.OnR
         if (!ProductActivity.isActive) {
 
             Intent intent = new Intent(getContext(), ProductActivity.class);
-            intent.putExtra("objectId", (String) model.getId());
+            intent.putExtra("objectId", model.getId());
 
             startActivity(intent);
         }

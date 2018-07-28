@@ -7,4 +7,6 @@
     <string name="product_buy">BUY</string>
     <string name="product_description">DESCRIPTION</string>
     <string name="product_price">Price: %1$d $</string>
+    <string name="order_your_name">Your name</string>
+    <string name="order_your_phone_number">Your phone number</string>
 </resources>

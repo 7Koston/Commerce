@@ -5,7 +5,7 @@ import com.scand.commerce.orders.item.OrderModel;
 
 import java.util.ArrayList;
 
-public interface OrdersView {
+interface OrdersView {
 
     void onOrdersLoaded(ArrayList<OrderModel> models);
 

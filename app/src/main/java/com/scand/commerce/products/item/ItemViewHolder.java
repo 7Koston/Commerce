@@ -16,7 +16,6 @@ public class ItemViewHolder extends RecyclerView.ViewHolder implements ItemCallB
     private final TextView tvProductPrice;
     private final TextView tvProductTitle;
     private final AspectRatioImageView arivItemProduct;
-    private final CardView cvItemProduct;
 
     private final ItemAdapter.OnItemClickListener onItemClickListener;
 
@@ -26,7 +25,7 @@ public class ItemViewHolder extends RecyclerView.ViewHolder implements ItemCallB
         tvProductTitle = itemView.findViewById(R.id.tvProductTitle);
         tvProductPrice = itemView.findViewById(R.id.tvProductPrice);
         arivItemProduct = itemView.findViewById(R.id.arivItemProduct);
-        cvItemProduct = itemView.findViewById(R.id.cvItemProduct);
+        CardView cvItemProduct = itemView.findViewById(R.id.cvItemProduct);
         cvItemProduct.setOnClickListener(this);
     }
 

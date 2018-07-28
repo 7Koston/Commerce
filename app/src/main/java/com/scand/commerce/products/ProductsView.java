@@ -5,7 +5,7 @@ import com.scand.commerce.products.item.ItemModel;
 
 import java.util.ArrayList;
 
-public interface ProductsView {
+interface ProductsView {
 
     void onProductsLoaded(ArrayList<ItemModel> itemModels);
 

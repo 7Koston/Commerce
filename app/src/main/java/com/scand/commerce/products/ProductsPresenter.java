@@ -16,16 +16,16 @@ public class ProductsPresenter extends LifecycleCallbacks implements ItemAdapter
 
     private static final String BUNDLE_DOWNLOADS = "BUNDLE_PRODUCTS";
     private final ProductsView productsView;
-    private final ProductsMapper productsMapper;
+    private final ProductsRequests productsRequests;
     private ArrayList<ItemModel> itemModels;
 
     ProductsPresenter(ProductsView productsView) {
         this.productsView = productsView;
-        productsMapper = new ProductsMapper();
+        productsRequests = new ProductsRequests();
     }
 
     private void loadProducts() {
-        Disposable subscription = productsMapper.items()
+        Disposable subscription = productsRequests.items()
                 .subscribeWith(new DisposableSingleObserver<ArrayList<ItemModel>>() {
                     @Override
                     public void onSuccess(ArrayList<ItemModel> models) {

@@ -2,7 +2,7 @@ package com.scand.commerce.order;
 
 import com.scand.commerce.orders.item.OrderModel;
 
-public interface OrderDialogView {
+interface OrderDialogView {
 
     void onPostFinished(String response);
 

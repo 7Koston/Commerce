@@ -1,6 +1,6 @@
 package com.scand.commerce.product;
 
-public interface ProductView {
+interface ProductView {
 
     void onProductLoaded(ProductModel productModel);
 

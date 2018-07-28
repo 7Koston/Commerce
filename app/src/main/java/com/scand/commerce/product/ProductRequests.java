@@ -7,7 +7,7 @@ import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
-public class ProductMapper {
+class ProductRequests {
 
     public Single<ProductModel> item(Object itemId) {
         return RetrofitClient.get()

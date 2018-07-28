@@ -30,7 +30,6 @@ public class ProductsFragment extends Fragment implements SwipeRefreshLayout.OnR
     private ItemAdapter mAdapter;
 
     private View v;
-    private RecyclerView rvProducts;
     private TintedProgressBar pbProducts;
     private SwipeRefreshLayout srlProducts;
 
@@ -44,7 +43,7 @@ public class ProductsFragment extends Fragment implements SwipeRefreshLayout.OnR
 
         Context mContext = v.getContext();
 
-        rvProducts = v.findViewById(R.id.rvProducts);
+        RecyclerView rvProducts = v.findViewById(R.id.rvProducts);
         pbProducts = v.findViewById(R.id.pbProducts);
         srlProducts = v.findViewById(R.id.srlProducts);
 

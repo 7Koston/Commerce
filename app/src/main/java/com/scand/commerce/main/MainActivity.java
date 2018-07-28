@@ -17,8 +17,6 @@ import com.scand.commerce.widgets.NonScrollableViewPager;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationViewEx.OnNavigationItemSelectedListener {
 
-    private MainPagerAdapter mPagerAdapter;
-
     private View v;
 
     private NonScrollableViewPager nsvpMain;
@@ -83,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     private void setupViewPager() {
         nsvpMain = findViewById(R.id.nsvpMain);
 
-        mPagerAdapter = new MainPagerAdapter(getSupportFragmentManager());
+        MainPagerAdapter mPagerAdapter = new MainPagerAdapter(getSupportFragmentManager());
         mPagerAdapter.setFragments(new ProductsFragment(), new OrdersFragment());
         nsvpMain.setOffscreenPageLimit(1);
         nsvpMain.setAdapter(mPagerAdapter);

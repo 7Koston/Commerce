@@ -11,18 +11,18 @@ import io.reactivex.observers.DisposableSingleObserver;
 class ProductPresenter extends LifecycleCallbacks {
     private final static String BUNDLE_SECTIONS = "BUNDLE_SECTIONS";
     private final ProductView productView;
-    private final ProductMapper productMapper;
+    private final ProductRequests productRequests;
     private ProductModel productModel;
-    private String id;
+    private final String id;
 
     ProductPresenter(ProductView productView, String id) {
         this.productView = productView;
-        productMapper = new ProductMapper();
+        productRequests = new ProductRequests();
         this.id = id;
     }
 
     private void loadProduct() {
-        Disposable updatesSubscription = productMapper.item(id)
+        Disposable updatesSubscription = productRequests.item(id)
                 .subscribeWith(new DisposableSingleObserver<ProductModel>() {
 
                     @Override

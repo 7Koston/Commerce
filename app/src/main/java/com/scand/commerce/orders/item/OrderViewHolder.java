@@ -13,7 +13,6 @@ public class OrderViewHolder extends RecyclerView.ViewHolder implements OrderCal
 
     private final TextView tvOrderName;
     private final TextView tvOrderPhone;
-    private final CardView cvOrder;
 
     private final OrderAdapter.OnItemClickListener onItemClickListener;
 
@@ -22,7 +21,7 @@ public class OrderViewHolder extends RecyclerView.ViewHolder implements OrderCal
         onItemClickListener = callBack;
         tvOrderPhone = itemView.findViewById(R.id.tvOrderPhone);
         tvOrderName = itemView.findViewById(R.id.tvOrderName);
-        cvOrder = itemView.findViewById(R.id.cvOrder);
+        CardView cvOrder = itemView.findViewById(R.id.cvOrder);
         cvOrder.setOnClickListener(this);
     }
 
